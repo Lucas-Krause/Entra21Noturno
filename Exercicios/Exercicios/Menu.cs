@@ -39,5 +39,11 @@ namespace Exercicios
             var exerc3 = new Exercicio3();
             exerc3.Show();
         }
+        private void exercicio4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var exerc4 = new Exercicio4();
+            exerc4.Show();
+        }
     }
 }
