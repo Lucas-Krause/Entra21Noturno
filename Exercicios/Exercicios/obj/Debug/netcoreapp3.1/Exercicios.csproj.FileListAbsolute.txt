@@ -14,3 +14,5 @@ C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netco
 C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.csproj.AssemblyReference.cache
 C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio1.resources
 C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Menu.resources
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio2.resources
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio3.resources

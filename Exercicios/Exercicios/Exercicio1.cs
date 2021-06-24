@@ -14,5 +14,28 @@ namespace Exercicios
         {
             InitializeComponent();
         }
+        private string Texto()
+        {
+            string texto = "";
+            for (int i = 1; i < 101; i++)
+            {
+                texto += $"{i} ";
+            }
+            return texto;
+        }
+        private void btnBotao_Click(object sender, EventArgs e)
+        {
+            this.txtBox.Text = Texto();
+        }
+        private void btnExitToMenu_Click(object sender, EventArgs e)
+        {
+            ChamarMenu();
+        }
+        private void ChamarMenu()
+        {
+            var menu = new Menu();
+            this.Close();
+            menu.Show();
+        }
     }
 }
