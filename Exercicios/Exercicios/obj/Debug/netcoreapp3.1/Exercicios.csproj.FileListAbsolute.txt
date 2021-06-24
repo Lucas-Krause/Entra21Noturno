@@ -1,0 +1,16 @@
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\bin\Debug\netcoreapp3.1\Exercicios.exe
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\bin\Debug\netcoreapp3.1\Exercicios.deps.json
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\bin\Debug\netcoreapp3.1\Exercicios.runtimeconfig.json
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\bin\Debug\netcoreapp3.1\Exercicios.runtimeconfig.dev.json
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\bin\Debug\netcoreapp3.1\Exercicios.dll
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\bin\Debug\netcoreapp3.1\Exercicios.pdb
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.csproj.GenerateResource.cache
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.AssemblyInfoInputs.cache
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.AssemblyInfo.cs
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.csproj.CoreCompileInputs.cache
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.dll
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.pdb
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.genruntimeconfig.cache
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.csproj.AssemblyReference.cache
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio1.resources
+C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Menu.resources
