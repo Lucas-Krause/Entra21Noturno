@@ -17,3 +17,4 @@ C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netco
 C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio2.resources
 C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio3.resources
 C:\Users\LUCAS\source\repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio4.resources
+C:\Users\LUCAS\Source\Repos\Entra21Noturno\Exercicios\Exercicios\obj\Debug\netcoreapp3.1\Exercicios.Exercicio5.resources

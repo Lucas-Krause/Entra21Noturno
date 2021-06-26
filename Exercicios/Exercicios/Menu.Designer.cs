@@ -31,17 +31,17 @@ namespace Exercicios
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Nivel 1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Nivel 2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Nivel 3");
             this.cmsMenuNivel1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exercicio1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exercicio2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exercicio3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exercicio4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exercicio5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsMenuNivel2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsMenuNivel3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tvMenu = new System.Windows.Forms.TreeView();
             this.btnExit = new System.Windows.Forms.Button();
-            this.exercicio4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmsMenuNivel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +51,10 @@ namespace Exercicios
             this.exercicio1ToolStripMenuItem,
             this.exercicio2ToolStripMenuItem,
             this.exercicio3ToolStripMenuItem,
-            this.exercicio4ToolStripMenuItem});
+            this.exercicio4ToolStripMenuItem,
+            this.exercicio5ToolStripMenuItem});
             this.cmsMenuNivel1.Name = "cmsMenuNivel1";
-            this.cmsMenuNivel1.Size = new System.Drawing.Size(181, 114);
+            this.cmsMenuNivel1.Size = new System.Drawing.Size(181, 136);
             // 
             // exercicio1ToolStripMenuItem
             // 
@@ -76,6 +77,20 @@ namespace Exercicios
             this.exercicio3ToolStripMenuItem.Text = "Exercicio 3";
             this.exercicio3ToolStripMenuItem.Click += new System.EventHandler(this.exercicio3ToolStripMenuItem_Click);
             // 
+            // exercicio4ToolStripMenuItem
+            // 
+            this.exercicio4ToolStripMenuItem.Name = "exercicio4ToolStripMenuItem";
+            this.exercicio4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exercicio4ToolStripMenuItem.Text = "Exercicio 4";
+            this.exercicio4ToolStripMenuItem.Click += new System.EventHandler(this.exercicio4ToolStripMenuItem_Click);
+            // 
+            // exercicio5ToolStripMenuItem
+            // 
+            this.exercicio5ToolStripMenuItem.Name = "exercicio5ToolStripMenuItem";
+            this.exercicio5ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exercicio5ToolStripMenuItem.Text = "Exercicio 5";
+            this.exercicio5ToolStripMenuItem.Click += new System.EventHandler(this.exercicio5ToolStripMenuItem_Click);
+            // 
             // cmsMenuNivel2
             // 
             this.cmsMenuNivel2.Name = "cmsMenuNivel2";
@@ -95,16 +110,8 @@ namespace Exercicios
             treeNode1.ContextMenuStrip = this.cmsMenuNivel1;
             treeNode1.Name = "Node0";
             treeNode1.Text = "Nivel 1";
-            treeNode2.ContextMenuStrip = this.cmsMenuNivel2;
-            treeNode2.Name = "Node1";
-            treeNode2.Text = "Nivel 2";
-            treeNode3.ContextMenuStrip = this.cmsMenuNivel3;
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Nivel 3";
             this.tvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
+            treeNode1});
             this.tvMenu.Size = new System.Drawing.Size(87, 85);
             this.tvMenu.TabIndex = 0;
             // 
@@ -119,24 +126,29 @@ namespace Exercicios
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // exercicio4ToolStripMenuItem
+            // label1
             // 
-            this.exercicio4ToolStripMenuItem.Name = "exercicio4ToolStripMenuItem";
-            this.exercicio4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exercicio4ToolStripMenuItem.Text = "Exercicio 4";
-            this.exercicio4ToolStripMenuItem.Click += new System.EventHandler(this.exercicio4ToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(30, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 42);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Clique com o botao direito\r\ne selecione a questao desejada\r\n";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 245);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tvMenu);
             this.Name = "Menu";
             this.Text = "Menu";
             this.cmsMenuNivel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -150,6 +162,8 @@ namespace Exercicios
         private System.Windows.Forms.ToolStripMenuItem exercicio2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exercicio3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exercicio4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exercicio5ToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

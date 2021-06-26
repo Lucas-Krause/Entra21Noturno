@@ -45,5 +45,17 @@ namespace Exercicios
             var exerc4 = new Exercicio4();
             exerc4.Show();
         }
+        private void exercicio5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var exerc5 = new Exercicio5();
+            exerc5.Show();
+        }
+        private void exercicio6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                
+        }
+
+       
     }
 }

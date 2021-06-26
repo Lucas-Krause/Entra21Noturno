@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj": {}
+    "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj": {
+    "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj",
+        "projectUniqueName": "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj",
         "projectName": "Exercicios",
-        "projectPath": "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj",
+        "projectPath": "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Exercicios\\Exercicios\\Exercicios.csproj",
         "packagesPath": "C:\\Users\\LUCAS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Exercicios\\Exercicios\\obj\\",
+        "outputPath": "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Exercicios\\Exercicios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LUCAS\\AppData\\Roaming\\NuGet\\NuGet.Config",
