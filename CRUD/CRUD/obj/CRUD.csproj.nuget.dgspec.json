@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Entra21\\Source\\Repos\\Entra21Noturno1\\Exercicios\\Exercicios\\Exercicios.csproj": {}
+    "C:\\Users\\Entra21\\source\\repos\\Entra21Noturno1\\CRUD\\CRUD\\CRUD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Entra21\\Source\\Repos\\Entra21Noturno1\\Exercicios\\Exercicios\\Exercicios.csproj": {
+    "C:\\Users\\Entra21\\source\\repos\\Entra21Noturno1\\CRUD\\CRUD\\CRUD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Entra21\\Source\\Repos\\Entra21Noturno1\\Exercicios\\Exercicios\\Exercicios.csproj",
-        "projectName": "Exercicios",
-        "projectPath": "C:\\Users\\Entra21\\Source\\Repos\\Entra21Noturno1\\Exercicios\\Exercicios\\Exercicios.csproj",
+        "projectUniqueName": "C:\\Users\\Entra21\\source\\repos\\Entra21Noturno1\\CRUD\\CRUD\\CRUD.csproj",
+        "projectName": "CRUD",
+        "projectPath": "C:\\Users\\Entra21\\source\\repos\\Entra21Noturno1\\CRUD\\CRUD\\CRUD.csproj",
         "packagesPath": "C:\\Users\\Entra21\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Entra21\\Source\\Repos\\Entra21Noturno1\\Exercicios\\Exercicios\\obj\\",
+        "outputPath": "C:\\Users\\Entra21\\source\\repos\\Entra21Noturno1\\CRUD\\CRUD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
