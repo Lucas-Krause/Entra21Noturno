@@ -58,35 +58,39 @@ namespace CRUD
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(8, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 32);
+            this.label1.Size = new System.Drawing.Size(190, 21);
             this.label1.TabIndex = 90;
             this.label1.Text = "Nome do aluno completo:";
             // 
             // txtNomeAluno
             // 
-            this.txtNomeAluno.Location = new System.Drawing.Point(12, 44);
+            this.txtNomeAluno.Location = new System.Drawing.Point(8, 26);
+            this.txtNomeAluno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeAluno.Name = "txtNomeAluno";
-            this.txtNomeAluno.Size = new System.Drawing.Size(284, 31);
+            this.txtNomeAluno.Size = new System.Drawing.Size(200, 23);
             this.txtNomeAluno.TabIndex = 0;
             this.txtNomeAluno.Leave += new System.EventHandler(this.txtNomeAluno_Leave);
             // 
             // lbxRegistros
             // 
             this.lbxRegistros.FormattingEnabled = true;
-            this.lbxRegistros.ItemHeight = 25;
-            this.lbxRegistros.Location = new System.Drawing.Point(657, 9);
+            this.lbxRegistros.ItemHeight = 15;
+            this.lbxRegistros.Location = new System.Drawing.Point(460, 5);
+            this.lbxRegistros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbxRegistros.Name = "lbxRegistros";
-            this.lbxRegistros.Size = new System.Drawing.Size(320, 379);
+            this.lbxRegistros.Size = new System.Drawing.Size(225, 229);
             this.lbxRegistros.TabIndex = 50;
             this.lbxRegistros.SelectedIndexChanged += new System.EventHandler(this.lbxRegistros_SelectedIndexChanged);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(657, 406);
+            this.btnNovo.Location = new System.Drawing.Point(460, 244);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(76, 43);
+            this.btnNovo.Size = new System.Drawing.Size(53, 26);
             this.btnNovo.TabIndex = 8;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -95,9 +99,10 @@ namespace CRUD
             // btnSalvar
             // 
             this.btnSalvar.Enabled = false;
-            this.btnSalvar.Location = new System.Drawing.Point(739, 406);
+            this.btnSalvar.Location = new System.Drawing.Point(517, 244);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(76, 43);
+            this.btnSalvar.Size = new System.Drawing.Size(53, 26);
             this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -106,9 +111,10 @@ namespace CRUD
             // btnDeletar
             // 
             this.btnDeletar.Enabled = false;
-            this.btnDeletar.Location = new System.Drawing.Point(901, 406);
+            this.btnDeletar.Location = new System.Drawing.Point(631, 244);
+            this.btnDeletar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(76, 43);
+            this.btnDeletar.Size = new System.Drawing.Size(53, 26);
             this.btnDeletar.TabIndex = 11;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
@@ -118,9 +124,10 @@ namespace CRUD
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 224);
+            this.label4.Location = new System.Drawing.Point(8, 147);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 32);
+            this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 11;
             this.label4.Text = "Sexo aluno:";
             // 
@@ -128,27 +135,30 @@ namespace CRUD
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 78);
+            this.label5.Location = new System.Drawing.Point(8, 51);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(232, 32);
+            this.label5.Size = new System.Drawing.Size(150, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = "Data de nascimento:";
             // 
             // mtxtCpfPrimeiro
             // 
-            this.mtxtCpfPrimeiro.Location = new System.Drawing.Point(12, 412);
+            this.mtxtCpfPrimeiro.Location = new System.Drawing.Point(6, 266);
+            this.mtxtCpfPrimeiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtxtCpfPrimeiro.Mask = "000,000,000-00";
             this.mtxtCpfPrimeiro.Name = "mtxtCpfPrimeiro";
-            this.mtxtCpfPrimeiro.Size = new System.Drawing.Size(145, 31);
+            this.mtxtCpfPrimeiro.Size = new System.Drawing.Size(103, 23);
             this.mtxtCpfPrimeiro.TabIndex = 5;
             // 
             // dtpDataDeNascimento
             // 
             this.dtpDataDeNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataDeNascimento.Location = new System.Drawing.Point(12, 113);
+            this.dtpDataDeNascimento.Location = new System.Drawing.Point(8, 74);
+            this.dtpDataDeNascimento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDataDeNascimento.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.dtpDataDeNascimento.Name = "dtpDataDeNascimento";
-            this.dtpDataDeNascimento.Size = new System.Drawing.Size(121, 31);
+            this.dtpDataDeNascimento.Size = new System.Drawing.Size(86, 23);
             this.dtpDataDeNascimento.TabIndex = 1;
             this.dtpDataDeNascimento.Value = new System.DateTime(2021, 6, 30, 18, 58, 26, 0);
             this.dtpDataDeNascimento.Leave += new System.EventHandler(this.dtpDataDeNascimento_Leave);
@@ -157,9 +167,10 @@ namespace CRUD
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(12, 153);
+            this.label6.Location = new System.Drawing.Point(8, 99);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(174, 32);
+            this.label6.Size = new System.Drawing.Size(113, 21);
             this.label6.TabIndex = 16;
             this.label6.Text = "Série do aluno:";
             // 
@@ -179,9 +190,10 @@ namespace CRUD
             "7º Ano",
             "8º Ano",
             "9º Ano"});
-            this.cbxSerieAluno.Location = new System.Drawing.Point(12, 188);
+            this.cbxSerieAluno.Location = new System.Drawing.Point(8, 122);
+            this.cbxSerieAluno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxSerieAluno.Name = "cbxSerieAluno";
-            this.cbxSerieAluno.Size = new System.Drawing.Size(100, 33);
+            this.cbxSerieAluno.Size = new System.Drawing.Size(71, 23);
             this.cbxSerieAluno.TabIndex = 2;
             this.cbxSerieAluno.Leave += new System.EventHandler(this.cbxSerieAluno_Leave);
             // 
@@ -189,26 +201,29 @@ namespace CRUD
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(12, 308);
+            this.label7.Location = new System.Drawing.Point(8, 195);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(253, 32);
+            this.label7.Size = new System.Drawing.Size(165, 21);
             this.label7.TabIndex = 18;
             this.label7.Text = "Nome do responsavel:";
             // 
             // txtNomeResponsavel
             // 
-            this.txtNomeResponsavel.Location = new System.Drawing.Point(12, 343);
+            this.txtNomeResponsavel.Location = new System.Drawing.Point(8, 218);
+            this.txtNomeResponsavel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeResponsavel.Name = "txtNomeResponsavel";
-            this.txtNomeResponsavel.Size = new System.Drawing.Size(284, 31);
+            this.txtNomeResponsavel.Size = new System.Drawing.Size(200, 23);
             this.txtNomeResponsavel.TabIndex = 4;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(12, 377);
+            this.label8.Location = new System.Drawing.Point(8, 243);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 32);
+            this.label8.Size = new System.Drawing.Size(40, 21);
             this.label8.TabIndex = 20;
             this.label8.Text = "CPF:";
             // 
@@ -216,35 +231,39 @@ namespace CRUD
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(298, 308);
+            this.label2.Location = new System.Drawing.Point(211, 195);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(353, 32);
+            this.label2.Size = new System.Drawing.Size(229, 21);
             this.label2.TabIndex = 21;
             this.label2.Text = "Nome do segundo responsavel:";
             // 
             // txtNomeSegundoResponsavel
             // 
-            this.txtNomeSegundoResponsavel.Location = new System.Drawing.Point(302, 343);
+            this.txtNomeSegundoResponsavel.Location = new System.Drawing.Point(212, 218);
+            this.txtNomeSegundoResponsavel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeSegundoResponsavel.Name = "txtNomeSegundoResponsavel";
-            this.txtNomeSegundoResponsavel.Size = new System.Drawing.Size(280, 31);
+            this.txtNomeSegundoResponsavel.Size = new System.Drawing.Size(197, 23);
             this.txtNomeSegundoResponsavel.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(302, 377);
+            this.label3.Location = new System.Drawing.Point(212, 243);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 32);
+            this.label3.Size = new System.Drawing.Size(40, 21);
             this.label3.TabIndex = 23;
             this.label3.Text = "CPF:";
             // 
             // mtxtCpfSegundo
             // 
-            this.mtxtCpfSegundo.Location = new System.Drawing.Point(302, 412);
+            this.mtxtCpfSegundo.Location = new System.Drawing.Point(212, 266);
+            this.mtxtCpfSegundo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtxtCpfSegundo.Mask = "000,000,000-00";
             this.mtxtCpfSegundo.Name = "mtxtCpfSegundo";
-            this.mtxtCpfSegundo.Size = new System.Drawing.Size(145, 31);
+            this.mtxtCpfSegundo.Size = new System.Drawing.Size(103, 23);
             this.mtxtCpfSegundo.TabIndex = 7;
             // 
             // cbxSexoAluno
@@ -256,43 +275,47 @@ namespace CRUD
             this.cbxSexoAluno.Items.AddRange(new object[] {
             "Feminino",
             "Masculino"});
-            this.cbxSexoAluno.Location = new System.Drawing.Point(12, 259);
+            this.cbxSexoAluno.Location = new System.Drawing.Point(8, 170);
+            this.cbxSexoAluno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxSexoAluno.Name = "cbxSexoAluno";
-            this.cbxSexoAluno.Size = new System.Drawing.Size(121, 33);
+            this.cbxSexoAluno.Size = new System.Drawing.Size(86, 23);
             this.cbxSexoAluno.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(298, 41);
+            this.label9.Location = new System.Drawing.Point(209, 25);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 25);
+            this.label9.Size = new System.Drawing.Size(12, 15);
             this.label9.TabIndex = 24;
             this.label9.Text = "*";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(139, 110);
+            this.label10.Location = new System.Drawing.Point(97, 74);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 25);
+            this.label10.Size = new System.Drawing.Size(12, 15);
             this.label10.TabIndex = 25;
             this.label10.Text = "*";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(118, 185);
+            this.label11.Location = new System.Drawing.Point(82, 122);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(20, 25);
+            this.label11.Size = new System.Drawing.Size(12, 15);
             this.label11.TabIndex = 26;
             this.label11.Text = "*";
             // 
             // CRUD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 470);
+            this.ClientSize = new System.Drawing.Size(686, 307);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -316,6 +339,7 @@ namespace CRUD
             this.Controls.Add(this.lbxRegistros);
             this.Controls.Add(this.txtNomeAluno);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CRUD";
             this.Text = "CRUD";
             this.Load += new System.EventHandler(this.CRUD_Load);
