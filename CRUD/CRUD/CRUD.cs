@@ -15,6 +15,16 @@ namespace CRUD
         List<string> nomeAluno, serieAluno, sexoAluno, primeiroResponsavel, segundoRespondavel, primeiroCPF, segundoCPF;
         List<DateTime> dataDeNascimento;
         bool registro;
+
+        private void txtNomeAluno_Leave(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(txtNomeAluno.Text))
+            {
+                MessageBox.Show("Por favor informe o nome do aluno!");
+                txtNomeAluno.Focus();
+            }
+        }
+
         public CRUD()
         {
             InitializeComponent();
@@ -26,6 +36,24 @@ namespace CRUD
             primeiroResponsavel = new List<string>();
             segundoRespondavel = new List<string>();
             dataDeNascimento = new List<DateTime>();
+        }
+
+        private void dtpDataDeNascimento_Leave(object sender, EventArgs e)
+        {
+            if (dtpDataDeNascimento.Value.Equals(DateTime.Today))
+            {
+                MessageBox.Show("Por favor informe a data de nascimento do aluno!");
+                dtpDataDeNascimento.Focus();
+            }
+        }
+
+        private void cbxSerieAluno_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(cbxSerieAluno.SelectedItem.ToString()))
+            {
+                MessageBox.Show("Por favor informe qual serie o aluno pertence!");
+                cbxSerieAluno.Focus();
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -66,23 +94,24 @@ namespace CRUD
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (registro)
-            {
+            {    
                 if (!String.IsNullOrEmpty(txtNomeAluno.Text) && !dtpDataDeNascimento.Value.Equals(DateTime.Today) && !String.IsNullOrEmpty(cbxSerieAluno.SelectedItem.ToString()))
                 {
-                    if ((!String.IsNullOrEmpty(txtNomeResponsavel.Text) && !String.IsNullOrEmpty(mtxtCpfPrimeiro.Text)) || (!String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) && !String.IsNullOrEmpty(mtxtCpfSegundo.Text)))
+
+                    if(String.IsNullOrEmpty(txtNomeResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfPrimeiro.Text))
                     {
-                        nomeAluno.Add(txtNomeAluno.Text);
-                        serieAluno.Add(cbxSerieAluno.SelectedItem.ToString());
-                        sexoAluno.Add(cbxSexoAluno.SelectedItem.ToString());
-                        primeiroCPF.Add(mtxtCpfPrimeiro.Text);
-                        segundoCPF.Add(mtxtCpfSegundo.Text);
-                        primeiroResponsavel.Add(txtNomeResponsavel.Text);
-                        segundoRespondavel.Add(txtNomeSegundoResponsavel.Text);
-                        dataDeNascimento.Add(dtpDataDeNascimento.Value);
+                        if(String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfSegundo.Text))
+                        {
+                            MessageBox.Show("Por favor infome o nome e o CPF de pelo menos um responsável!");
+                        }
+                        else
+                        {
+                            SalvarValores();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Por favor infome o nome e o CPF de pelo menos um responsável!");
+                        SalvarValores();
                     }
                 }
                 else
@@ -126,6 +155,17 @@ namespace CRUD
         private void CRUD_Load(object sender, EventArgs e)
         {
             btnNovo_Click(sender, e);
+        }
+        private void SalvarValores()
+        {
+            nomeAluno.Add(txtNomeAluno.Text);
+            serieAluno.Add(cbxSerieAluno.SelectedItem.ToString());
+            sexoAluno.Add(cbxSexoAluno.SelectedItem.ToString());
+            primeiroCPF.Add(mtxtCpfPrimeiro.Text);
+            segundoCPF.Add(mtxtCpfSegundo.Text);
+            primeiroResponsavel.Add(txtNomeResponsavel.Text);
+            segundoRespondavel.Add(txtNomeSegundoResponsavel.Text);
+            dataDeNascimento.Add(dtpDataDeNascimento.Value);
         }
     }
 }

@@ -70,6 +70,7 @@ namespace CRUD
             this.txtNomeAluno.Name = "txtNomeAluno";
             this.txtNomeAluno.Size = new System.Drawing.Size(284, 31);
             this.txtNomeAluno.TabIndex = 0;
+            this.txtNomeAluno.Leave += new System.EventHandler(this.txtNomeAluno_Leave);
             // 
             // lbxRegistros
             // 
@@ -145,10 +146,12 @@ namespace CRUD
             // 
             this.dtpDataDeNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataDeNascimento.Location = new System.Drawing.Point(12, 113);
+            this.dtpDataDeNascimento.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.dtpDataDeNascimento.Name = "dtpDataDeNascimento";
             this.dtpDataDeNascimento.Size = new System.Drawing.Size(121, 31);
             this.dtpDataDeNascimento.TabIndex = 1;
             this.dtpDataDeNascimento.Value = new System.DateTime(2021, 6, 30, 18, 58, 26, 0);
+            this.dtpDataDeNascimento.Leave += new System.EventHandler(this.dtpDataDeNascimento_Leave);
             // 
             // label6
             // 
@@ -180,6 +183,7 @@ namespace CRUD
             this.cbxSerieAluno.Name = "cbxSerieAluno";
             this.cbxSerieAluno.Size = new System.Drawing.Size(100, 33);
             this.cbxSerieAluno.TabIndex = 2;
+            this.cbxSerieAluno.Leave += new System.EventHandler(this.cbxSerieAluno_Leave);
             // 
             // label7
             // 
