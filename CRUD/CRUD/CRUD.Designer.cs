@@ -76,15 +76,15 @@ namespace CRUD
             // 
             this.lbxRegistros.FormattingEnabled = true;
             this.lbxRegistros.ItemHeight = 25;
-            this.lbxRegistros.Location = new System.Drawing.Point(657, 9);
+            this.lbxRegistros.Location = new System.Drawing.Point(512, 9);
             this.lbxRegistros.Name = "lbxRegistros";
-            this.lbxRegistros.Size = new System.Drawing.Size(320, 379);
+            this.lbxRegistros.Size = new System.Drawing.Size(465, 279);
             this.lbxRegistros.TabIndex = 50;
             this.lbxRegistros.SelectedIndexChanged += new System.EventHandler(this.lbxRegistros_SelectedIndexChanged);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(657, 406);
+            this.btnNovo.Location = new System.Drawing.Point(683, 297);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(76, 43);
             this.btnNovo.TabIndex = 8;
@@ -95,7 +95,7 @@ namespace CRUD
             // btnSalvar
             // 
             this.btnSalvar.Enabled = false;
-            this.btnSalvar.Location = new System.Drawing.Point(739, 406);
+            this.btnSalvar.Location = new System.Drawing.Point(778, 297);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(76, 43);
             this.btnSalvar.TabIndex = 9;
@@ -106,7 +106,7 @@ namespace CRUD
             // btnDeletar
             // 
             this.btnDeletar.Enabled = false;
-            this.btnDeletar.Location = new System.Drawing.Point(901, 406);
+            this.btnDeletar.Location = new System.Drawing.Point(870, 297);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(76, 43);
             this.btnDeletar.TabIndex = 11;

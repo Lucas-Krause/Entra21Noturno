@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRUD.Classe_Informacoes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,17 @@ namespace CRUD
 {
     public partial class CRUD : Form
     {
-        List<string> nomeAluno, serieAluno, sexoAluno, primeiroResponsavel, segundoRespondavel, primeiroCPF, segundoCPF;
-        List<DateTime> dataDeNascimento;
-        bool registro;
+        List<Registro> registros;
+        bool novo;
 
+
+        public CRUD()
+        {
+            InitializeComponent();
+            registros = new List<Registro>();
+
+        }
+        /*
         private void txtNomeAluno_Leave(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(txtNomeAluno.Text))
@@ -23,19 +31,6 @@ namespace CRUD
                 MessageBox.Show("Por favor informe o nome do aluno!");
                 txtNomeAluno.Focus();
             }
-        }
-
-        public CRUD()
-        {
-            InitializeComponent();
-            nomeAluno = new List<string>();
-            serieAluno = new List<string>();
-            sexoAluno = new List<string>();
-            primeiroCPF = new List<string>();
-            segundoCPF = new List<string>();
-            primeiroResponsavel = new List<string>();
-            segundoRespondavel = new List<string>();
-            dataDeNascimento = new List<DateTime>();
         }
 
         private void dtpDataDeNascimento_Leave(object sender, EventArgs e)
@@ -55,10 +50,10 @@ namespace CRUD
                 cbxSerieAluno.Focus();
             }
         }
-
+        */
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            registro = true;
+            novo = true;
             txtNomeAluno.Text = "";
             txtNomeResponsavel.Text = "";
             txtNomeSegundoResponsavel.Text = "";
@@ -77,15 +72,15 @@ namespace CRUD
         {
             if (lbxRegistros.SelectedIndex >= 0)
             {
-                txtNomeAluno.Text = nomeAluno[lbxRegistros.SelectedIndex];
-                txtNomeResponsavel.Text = primeiroResponsavel[lbxRegistros.SelectedIndex];
-                txtNomeSegundoResponsavel.Text = segundoRespondavel[lbxRegistros.SelectedIndex];
-                mtxtCpfPrimeiro.Text = primeiroCPF[lbxRegistros.SelectedIndex];
-                mtxtCpfSegundo.Text = segundoCPF[lbxRegistros.SelectedIndex];
-                cbxSerieAluno.SelectedItem = serieAluno[lbxRegistros.SelectedIndex];
-                cbxSexoAluno.SelectedItem = sexoAluno[lbxRegistros.SelectedIndex];
-                dtpDataDeNascimento.Value = dataDeNascimento[lbxRegistros.SelectedIndex];
-                registro = false;
+                txtNomeAluno.Text = registros[lbxRegistros.SelectedIndex].Nome;
+                txtNomeResponsavel.Text = registros[lbxRegistros.SelectedIndex].NomeResponsavelUm;
+                txtNomeSegundoResponsavel.Text = registros[lbxRegistros.SelectedIndex].NomeResponsavelDois;
+                mtxtCpfPrimeiro.Text = registros[lbxRegistros.SelectedIndex].PrimeiroCPF;
+                mtxtCpfSegundo.Text = registros[lbxRegistros.SelectedIndex].SegundoCPF;
+                cbxSerieAluno.SelectedItem = registros[lbxRegistros.SelectedIndex].Serie;
+                cbxSexoAluno.SelectedItem = registros[lbxRegistros.SelectedIndex].Sexo;
+                dtpDataDeNascimento.Value = registros[lbxRegistros.SelectedIndex].DataDeNascimento;
+                novo = false;
                 btnSalvar.Enabled = true;
                 btnDeletar.Enabled = true;
             }
@@ -93,14 +88,14 @@ namespace CRUD
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (registro)
-            {    
+            if (novo)
+            {
                 if (!String.IsNullOrEmpty(txtNomeAluno.Text) && !dtpDataDeNascimento.Value.Equals(DateTime.Today) && !String.IsNullOrEmpty(cbxSerieAluno.SelectedItem.ToString()))
                 {
 
-                    if(String.IsNullOrEmpty(txtNomeResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfPrimeiro.Text))
+                    if (String.IsNullOrEmpty(txtNomeResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfPrimeiro.Text))
                     {
-                        if(String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfSegundo.Text))
+                        if (String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfSegundo.Text))
                         {
                             MessageBox.Show("Por favor infome o nome e o CPF de pelo menos um responsável!");
                         }
@@ -119,34 +114,27 @@ namespace CRUD
                     MessageBox.Show("Há campos obrigatórios de dados do aluno em branco!");
                 }
                 lbxRegistros.Items.Clear();
-                foreach (var nome in nomeAluno)
+                foreach (var contato in registros)
                 {
-                    lbxRegistros.Items.Add(nome);
+                    lbxRegistros.Items.Add(contato);
                 }
             }
             else
             {
-                nomeAluno[lbxRegistros.SelectedIndex] = txtNomeAluno.Text;
-                primeiroResponsavel[lbxRegistros.SelectedIndex] = txtNomeResponsavel.Text;
-                segundoRespondavel[lbxRegistros.SelectedIndex] = txtNomeSegundoResponsavel.Text;
-                primeiroCPF[lbxRegistros.SelectedIndex] = mtxtCpfPrimeiro.Text;
-                segundoCPF[lbxRegistros.SelectedIndex] = mtxtCpfSegundo.Text;
-                serieAluno[lbxRegistros.SelectedIndex] = cbxSerieAluno.SelectedItem.ToString();
-                sexoAluno[lbxRegistros.SelectedIndex] = cbxSexoAluno.SelectedItem.ToString();
-                dataDeNascimento[lbxRegistros.SelectedIndex] = dtpDataDeNascimento.Value;
+                registros[lbxRegistros.SelectedIndex].Nome = txtNomeAluno.Text;
+                registros[lbxRegistros.SelectedIndex].NomeResponsavelUm = txtNomeResponsavel.Text;
+                registros[lbxRegistros.SelectedIndex].NomeResponsavelDois = txtNomeSegundoResponsavel.Text;
+                registros[lbxRegistros.SelectedIndex].PrimeiroCPF = mtxtCpfPrimeiro.Text;
+                registros[lbxRegistros.SelectedIndex].SegundoCPF = mtxtCpfSegundo.Text;
+                registros[lbxRegistros.SelectedIndex].Serie = cbxSerieAluno.SelectedItem.ToString();
+                registros[lbxRegistros.SelectedIndex].Sexo = cbxSexoAluno.SelectedItem.ToString();
+                registros[lbxRegistros.SelectedIndex].DataDeNascimento = dtpDataDeNascimento.Value;
             }
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            nomeAluno.RemoveAt(lbxRegistros.SelectedIndex);
-            serieAluno.RemoveAt(lbxRegistros.SelectedIndex);
-            sexoAluno.RemoveAt(lbxRegistros.SelectedIndex);
-            primeiroCPF.RemoveAt(lbxRegistros.SelectedIndex);
-            segundoCPF.RemoveAt(lbxRegistros.SelectedIndex);
-            primeiroResponsavel.RemoveAt(lbxRegistros.SelectedIndex);
-            segundoRespondavel.RemoveAt(lbxRegistros.SelectedIndex);
-            dataDeNascimento.RemoveAt(lbxRegistros.SelectedIndex);
+            registros.RemoveAt(lbxRegistros.SelectedIndex);
             lbxRegistros.Items.RemoveAt(lbxRegistros.SelectedIndex);
             btnNovo_Click(sender, e);
             btnDeletar.Enabled = false;
@@ -158,14 +146,16 @@ namespace CRUD
         }
         private void SalvarValores()
         {
-            nomeAluno.Add(txtNomeAluno.Text);
-            serieAluno.Add(cbxSerieAluno.SelectedItem.ToString());
-            sexoAluno.Add(cbxSexoAluno.SelectedItem.ToString());
-            primeiroCPF.Add(mtxtCpfPrimeiro.Text);
-            segundoCPF.Add(mtxtCpfSegundo.Text);
-            primeiroResponsavel.Add(txtNomeResponsavel.Text);
-            segundoRespondavel.Add(txtNomeSegundoResponsavel.Text);
-            dataDeNascimento.Add(dtpDataDeNascimento.Value);
+            Registro contato = new Registro(
+                txtNomeAluno.Text,
+                dtpDataDeNascimento.Value,
+                cbxSerieAluno.SelectedItem.ToString(),
+                cbxSexoAluno.SelectedItem.ToString(),
+                txtNomeResponsavel.Text,
+                mtxtCpfPrimeiro.Text,
+                txtNomeSegundoResponsavel.Text,
+                mtxtCpfSegundo.Text);
+            registros.Add(contato);
         }
     }
 }
