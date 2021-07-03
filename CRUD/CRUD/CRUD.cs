@@ -157,5 +157,54 @@ namespace CRUD
                 mtxtCpfSegundo.Text);
             registros.Add(contato);
         }
+        private void DeletarSelecionado()
+        {
+            nomeAluno.RemoveAt(lbxRegistros.SelectedIndex);
+            serieAluno.RemoveAt(lbxRegistros.SelectedIndex);
+            sexoAluno.RemoveAt(lbxRegistros.SelectedIndex);
+            primeiroCPF.RemoveAt(lbxRegistros.SelectedIndex);
+            segundoCPF.RemoveAt(lbxRegistros.SelectedIndex);
+            primeiroResponsavel.RemoveAt(lbxRegistros.SelectedIndex);
+            segundoRespondavel.RemoveAt(lbxRegistros.SelectedIndex);
+            dataDeNascimento.RemoveAt(lbxRegistros.SelectedIndex);
+            lbxRegistros.Items.RemoveAt(lbxRegistros.SelectedIndex);
+        }
+        private void AtualizarSelecionado()
+        {
+            nomeAluno[lbxRegistros.SelectedIndex] = txtNomeAluno.Text;
+            primeiroResponsavel[lbxRegistros.SelectedIndex] = txtNomeResponsavel.Text;
+            segundoRespondavel[lbxRegistros.SelectedIndex] = txtNomeSegundoResponsavel.Text;
+            primeiroCPF[lbxRegistros.SelectedIndex] = mtxtCpfPrimeiro.Text;
+            segundoCPF[lbxRegistros.SelectedIndex] = mtxtCpfSegundo.Text;
+            serieAluno[lbxRegistros.SelectedIndex] = cbxSerieAluno.SelectedItem.ToString();
+            sexoAluno[lbxRegistros.SelectedIndex] = cbxSexoAluno.SelectedItem.ToString();
+            dataDeNascimento[lbxRegistros.SelectedIndex] = dtpDataDeNascimento.Value;
+        }
+        private void LimparValores()
+        {
+            txtNomeAluno.Text = "";
+            txtNomeResponsavel.Text = "";
+            txtNomeSegundoResponsavel.Text = "";
+            mtxtCpfPrimeiro.Text = "";
+            mtxtCpfSegundo.Text = "";
+            cbxSerieAluno.SelectedItem = null;
+            cbxSexoAluno.SelectedItem = null;
+            dtpDataDeNascimento.Value = DateTime.Today;
+            txtNomeAluno.Focus();
+            btnSalvar.Enabled = true;
+            btnDeletar.Enabled = false;
+            lbxRegistros.SelectedIndex = -1;
+        }
+        private void MostrarValores()
+        {
+            txtNomeAluno.Text = nomeAluno[lbxRegistros.SelectedIndex];
+            txtNomeResponsavel.Text = primeiroResponsavel[lbxRegistros.SelectedIndex];
+            txtNomeSegundoResponsavel.Text = segundoRespondavel[lbxRegistros.SelectedIndex];
+            mtxtCpfPrimeiro.Text = primeiroCPF[lbxRegistros.SelectedIndex];
+            mtxtCpfSegundo.Text = segundoCPF[lbxRegistros.SelectedIndex];
+            cbxSerieAluno.SelectedItem = serieAluno[lbxRegistros.SelectedIndex];
+            cbxSexoAluno.SelectedItem = sexoAluno[lbxRegistros.SelectedIndex];
+            dtpDataDeNascimento.Value = dataDeNascimento[lbxRegistros.SelectedIndex];
+        }
     }
 }
