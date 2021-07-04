@@ -37,7 +37,7 @@ namespace CRUD.Classe_Informacoes
         
         public override string ToString()
         {
-            return $"{Nome}, {Sexo} - {Serie} - {DataDeNascimento}";
+            return $"{Nome}, {Sexo} - {Serie}";
         }
         
     }
