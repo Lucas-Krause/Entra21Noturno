@@ -34,12 +34,12 @@ namespace CRUD.Classe_Informacoes
             NomeResponsavelDois = nomeResponsavelDois;
             SegundoCPF = segundoCPF;
         }
-        
+
         public override string ToString()
         {
             return $"{Nome}, {Sexo} - {Serie}";
         }
-        
+
     }
 }
 
