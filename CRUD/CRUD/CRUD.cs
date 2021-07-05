@@ -23,10 +23,10 @@ namespace CRUD
             registros = new List<Registro>();
 
         }
-        
+
         private void txtNomeAluno_Leave(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(txtNomeAluno.Text))
+            if (String.IsNullOrEmpty(txtNomeAluno.Text))
             {
                 MessageBox.Show("Por favor informe o nome do aluno!");
                 txtNomeAluno.Focus();
@@ -50,7 +50,7 @@ namespace CRUD
                 cbxSerieAluno.Focus();
             }
         }
-        
+
         private void btnNovo_Click(object sender, EventArgs e)
         {
             LimparValores();
@@ -58,15 +58,15 @@ namespace CRUD
             btnSalvar.Enabled = true;
             btnDeletar.Enabled = false;
             lbxRegistros.SelectedIndex = -1;
+            novo = true;
         }
 
         private void lbxRegistros_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbxRegistros.SelectedIndex >= 0)
             {
-                MostrarValores();
+                MostrarValoresSelecionado();
                 novo = false;
-                btnSalvar.Enabled = true;
                 btnDeletar.Enabled = true;
             }
         }
@@ -75,19 +75,11 @@ namespace CRUD
         {
             if (novo)
             {
-                if (!String.IsNullOrEmpty(txtNomeAluno.Text) && !dtpDataDeNascimento.Value.Equals(DateTime.Today) && !String.IsNullOrEmpty(cbxSerieAluno.SelectedItem.ToString()))
+                if (String.IsNullOrEmpty(txtNomeResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfPrimeiro.Text))
                 {
-
-                    if (String.IsNullOrEmpty(txtNomeResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfPrimeiro.Text))
+                    if (String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfSegundo.Text))
                     {
-                        if (String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfSegundo.Text))
-                        {
-                            MessageBox.Show("Por favor infome o nome e o CPF de pelo menos um responsável!");
-                        }
-                        else
-                        {
-                            SalvarValores();
-                        }
+                        MessageBox.Show("Por favor infome o nome e o CPF de pelo menos um responsável!");
                     }
                     else
                     {
@@ -96,24 +88,21 @@ namespace CRUD
                 }
                 else
                 {
-                    MessageBox.Show("Há campos obrigatórios de dados do aluno em branco!");
-                }
-                lbxRegistros.Items.Clear();
-                foreach (var contato in registros)
-                {
-                    lbxRegistros.Items.Add(contato);
+                    SalvarValores();
                 }
             }
             else
             {
                 AtualizarSelecionado();
             }
+            MostrarCadastros();
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             DeletarSelecionado();
-            btnNovo_Click(sender, e);
+            LimparValores();
+            lbxRegistros.SelectedIndex = -1;
             btnDeletar.Enabled = false;
         }
 
@@ -121,6 +110,7 @@ namespace CRUD
         {
             btnNovo_Click(sender, e);
         }
+
         private void SalvarValores()
         {
             Registro contato = new Registro(
@@ -134,11 +124,13 @@ namespace CRUD
                 mtxtCpfSegundo.Text);
             registros.Add(contato);
         }
+
         private void DeletarSelecionado()
         {
             registros.RemoveAt(lbxRegistros.SelectedIndex);
             lbxRegistros.Items.RemoveAt(lbxRegistros.SelectedIndex);
         }
+
         private void AtualizarSelecionado()
         {
             registros[lbxRegistros.SelectedIndex].Nome = txtNomeAluno.Text;
@@ -150,6 +142,7 @@ namespace CRUD
             registros[lbxRegistros.SelectedIndex].Sexo = cbxSexoAluno.SelectedItem.ToString();
             registros[lbxRegistros.SelectedIndex].DataDeNascimento = dtpDataDeNascimento.Value;
         }
+
         private void LimparValores()
         {
             txtNomeAluno.Text = "";
@@ -160,12 +153,9 @@ namespace CRUD
             cbxSerieAluno.SelectedItem = null;
             cbxSexoAluno.SelectedItem = null;
             dtpDataDeNascimento.Value = DateTime.Today;
-            txtNomeAluno.Focus();
-            btnSalvar.Enabled = true;
-            btnDeletar.Enabled = false;
-            lbxRegistros.SelectedIndex = -1;
         }
-        private void MostrarValores()
+
+        private void MostrarValoresSelecionado()
         {
             txtNomeAluno.Text = registros[lbxRegistros.SelectedIndex].Nome;
             txtNomeResponsavel.Text = registros[lbxRegistros.SelectedIndex].NomeResponsavelUm;
@@ -175,6 +165,15 @@ namespace CRUD
             cbxSerieAluno.SelectedItem = registros[lbxRegistros.SelectedIndex].Serie;
             cbxSexoAluno.SelectedItem = registros[lbxRegistros.SelectedIndex].Sexo;
             dtpDataDeNascimento.Value = registros[lbxRegistros.SelectedIndex].DataDeNascimento;
+        }
+
+        private void MostrarCadastros()
+        {
+            lbxRegistros.Items.Clear();
+            foreach (var contato in registros)
+            {
+                lbxRegistros.Items.Add(contato);
+            }
         }
     }
 }
