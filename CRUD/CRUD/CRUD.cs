@@ -15,7 +15,7 @@ namespace CRUD
     {
         List<Registro> registros;
         bool novo;
-
+        string mensagemDeErro = "Os dados obrigatórios a seguir não foram digitados\ndigite-os antes de salvar.";
 
         public CRUD()
         {
@@ -23,10 +23,12 @@ namespace CRUD
             registros = new List<Registro>();
 
         }
+
         private void CRUD_Load(object sender, EventArgs e)
         {
             btnNovo_Click(sender, e);
         }
+
         private void btnNovo_Click(object sender, EventArgs e)
         {
             LimparValores();
@@ -36,32 +38,29 @@ namespace CRUD
             lbxRegistros.SelectedIndex = -1;
             novo = true;
         }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (novo)
             {
-                if (String.IsNullOrEmpty(txtNomeResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfPrimeiro.Text))
+                if (VerificarDadosPreenchidos())
                 {
-                    if (String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) || String.IsNullOrEmpty(mtxtCpfSegundo.Text))
-                    {
-                        MessageBox.Show("Por favor infome o nome e o CPF de pelo menos um responsável!");
-                    }
-                    else
-                    {
-                        SalvarValores();
-                    }
+                    SalvarValores();
+                    novo = false;
                 }
                 else
                 {
-                    SalvarValores();
+                    MessageBox.Show(mensagemDeErro);
+                    mensagemDeErro = "Os dados obrigatórios a seguir não foram digitados\ndigite-os antes de salvar.";
                 }
             }
             else
             {
-                AtualizarSelecionado();
+                EditarSelecionado();
             }
-            MostrarCadastros();
+            AtualizarCadastros();
         }
+
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             DeletarSelecionado();
@@ -69,30 +68,7 @@ namespace CRUD
             lbxRegistros.SelectedIndex = -1;
             btnDeletar.Enabled = false;
         }
-        private void txtNomeAluno_Leave(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtNomeAluno.Text))
-            {
-                MessageBox.Show("Por favor informe o nome do aluno!");
-                txtNomeAluno.Focus();
-            }
-        }
-        private void dtpDataDeNascimento_Leave(object sender, EventArgs e)
-        {
-            if (dtpDataDeNascimento.Value.Equals(DateTime.Today))
-            {
-                MessageBox.Show("Por favor informe a data de nascimento do aluno!");
-                dtpDataDeNascimento.Focus();
-            }
-        }
-        private void cbxSerieAluno_Leave(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(cbxSerieAluno.SelectedItem.ToString()))
-            {
-                MessageBox.Show("Por favor informe qual serie o aluno pertence!");
-                cbxSerieAluno.Focus();
-            }
-        }
+
         private void lbxRegistros_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbxRegistros.SelectedIndex >= 0)
@@ -102,6 +78,7 @@ namespace CRUD
                 btnDeletar.Enabled = true;
             }
         }
+
         private void SalvarValores()
         {
             Registro contato = new Registro(
@@ -115,18 +92,20 @@ namespace CRUD
                 mtxtCpfSegundo.Text);
             registros.Add(contato);
         }
+
         private void LimparValores()
         {
-            txtNomeAluno.Text = "";
-            txtNomeResponsavel.Text = "";
-            txtNomeSegundoResponsavel.Text = "";
-            mtxtCpfPrimeiro.Text = "";
-            mtxtCpfSegundo.Text = "";
+            txtNomeAluno.Clear();
+            txtNomeResponsavel.Clear();
+            txtNomeSegundoResponsavel.Clear();
+            mtxtCpfPrimeiro.Clear();
+            mtxtCpfSegundo.Clear();
             cbxSerieAluno.SelectedItem = null;
             cbxSexoAluno.SelectedItem = null;
             dtpDataDeNascimento.Value = DateTime.Today;
         }
-        private void MostrarCadastros()
+
+        private void AtualizarCadastros()
         {
             lbxRegistros.Items.Clear();
             foreach (var contato in registros)
@@ -134,6 +113,7 @@ namespace CRUD
                 lbxRegistros.Items.Add(contato);
             }
         }
+
         private void MostrarValoresSelecionado()
         {
             txtNomeAluno.Text = registros[lbxRegistros.SelectedIndex].Nome;
@@ -145,12 +125,14 @@ namespace CRUD
             cbxSexoAluno.SelectedItem = registros[lbxRegistros.SelectedIndex].Sexo;
             dtpDataDeNascimento.Value = registros[lbxRegistros.SelectedIndex].DataDeNascimento;
         }
+
         private void DeletarSelecionado()
         {
             registros.RemoveAt(lbxRegistros.SelectedIndex);
             lbxRegistros.Items.RemoveAt(lbxRegistros.SelectedIndex);
         }
-        private void AtualizarSelecionado()
+
+        private void EditarSelecionado()
         {
             registros[lbxRegistros.SelectedIndex].Nome = txtNomeAluno.Text;
             registros[lbxRegistros.SelectedIndex].NomeResponsavelUm = txtNomeResponsavel.Text;
@@ -160,6 +142,35 @@ namespace CRUD
             registros[lbxRegistros.SelectedIndex].Serie = cbxSerieAluno.SelectedItem.ToString();
             registros[lbxRegistros.SelectedIndex].Sexo = cbxSexoAluno.SelectedItem.ToString();
             registros[lbxRegistros.SelectedIndex].DataDeNascimento = dtpDataDeNascimento.Value;
+        }
+
+        private bool VerificarDadosPreenchidos()
+        {
+            bool verificacao = true;
+            if (String.IsNullOrEmpty(txtNomeAluno.Text))
+            {
+                verificacao = false;
+                mensagemDeErro += "\n--> Nome do Aluno.";
+            }
+            if (dtpDataDeNascimento.Value == DateTime.Today)
+            {
+                verificacao = false;
+                mensagemDeErro += "\n--> Data de Nascimento.";
+            }
+            if (cbxSerieAluno.SelectedItem == null)
+            {
+                verificacao = false;
+                mensagemDeErro += "\n--> Serie do Aluno.";
+            }
+            if (String.IsNullOrEmpty(txtNomeResponsavel.Text) || !mtxtCpfPrimeiro.MaskCompleted)
+            {
+                if (String.IsNullOrEmpty(txtNomeSegundoResponsavel.Text) || !mtxtCpfSegundo.MaskCompleted)
+                {
+                    verificacao = false;
+                    mensagemDeErro += "\n--> Nome de pelo menos um Responsavel com CPF";
+                }
+            }
+            return verificacao;
         }
     }
 }
