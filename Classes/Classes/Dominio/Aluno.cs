@@ -8,6 +8,9 @@ namespace Classes.Dominio
     {
         public string Turno { get; set; }
         public string Modalidade { get; set; }
+        public string Pagou { get; set; }
+
+        
 
         public Aluno(string nome, string telefone, string cpf, string turno, string modalidade)
         {
@@ -16,11 +19,12 @@ namespace Classes.Dominio
             CPF = cpf;
             Turno = turno;
             Modalidade = modalidade;
+            Pagou = "Não.";
         }
 
         public override string ToString()
         {
-            return $"{Nome} - {Telefone} - {Modalidade}";
+            return $"{Nome} - {Turno} - {Modalidade} - Pagou: {Pagou}";
         }
     }
 }
