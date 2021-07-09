@@ -118,13 +118,14 @@ namespace Classes
 
         private void lbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lbxAlunos.SelectedIndex >= 0)
+            int indice = lbxAlunos.SelectedIndex;
+            if (indice >= 0)
             {
-                txtNome.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].Nome;
-                mskTelefone.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].Telefone;
-                mskCPF.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].CPF;
-                cbxTurno.SelectedItem = academia.ListaAlunos[lbxAlunos.SelectedIndex].Turno;
-                cbxModalidade.SelectedItem = academia.ListaAlunos[lbxAlunos.SelectedIndex].Modalidade;
+                txtNome.Text = academia.DadoAluno(indice, "Nome");
+                mskTelefone.Text = academia.DadoAluno(indice, "Telefone");
+                mskCPF.Text = academia.DadoAluno(indice, "CPF");
+                cbxTurno.SelectedItem = academia.DadoAluno(indice, "Turno");
+                cbxModalidade.SelectedItem = academia.DadoAluno(indice, "Modalidade");
                 btnSalvar.Enabled = true;
                 btnDeletar.Enabled = true;
                 novo = false;

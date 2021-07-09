@@ -33,6 +33,29 @@ namespace Classes.Dominio
             ListaAlunos[indice].Modalidade = modalidade;
         }
 
+        public string DadoAluno(int indice, string dado)
+        {
+            switch (dado)
+            {
+                case "Nome":
+                    dado = ListaAlunos[indice].Nome;
+                    break;
+                case "Telefone":
+                    dado = ListaAlunos[indice].Telefone;
+                    break;
+                case "CPF":
+                    dado = ListaAlunos[indice].CPF;
+                    break;
+                case "Turno":
+                    dado = ListaAlunos[indice].Turno;
+                    break;
+                case "Modalidade":
+                    dado = ListaAlunos[indice].Modalidade;
+                    break;
+            }
+            return dado;
+        }
+
         public void DeletarAluno(int indice)
         {
             ListaAlunos.RemoveAt(indice);
