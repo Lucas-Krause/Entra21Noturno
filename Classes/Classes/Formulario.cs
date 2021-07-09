@@ -19,41 +19,16 @@ namespace Classes
         bool verificacao;
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
-        public Formulario()
-        {
-            InitializeComponent();
-            academia = new Academia();
-        }
-
         private void Formulario_Load(object sender, EventArgs e)
         {
             btnAdicionar_Click(sender, e);
         }
 
-        private void cbxModalidade_SelectedIndexChanged(object sender, EventArgs e)
+        public Formulario()
         {
-            if (cbxModalidade.SelectedItem != null)
-            {
-                btnSalvar.Enabled = true;
-                CalcularMensalidade();
-            }
+            InitializeComponent();
+            academia = new Academia();
         }
-
-        private void lbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lbxAlunos.SelectedIndex >= 0)
-            {
-                txtNome.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].Nome;
-                mskTelefone.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].Telefone;
-                mskCPF.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].CPF;
-                cbxTurno.SelectedItem = academia.ListaAlunos[lbxAlunos.SelectedIndex].Turno;
-                cbxModalidade.SelectedItem = academia.ListaAlunos[lbxAlunos.SelectedIndex].Modalidade;
-                btnSalvar.Enabled = true;
-                btnDeletar.Enabled = true;
-                novo = false;
-            }
-        }
-
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
@@ -132,25 +107,30 @@ namespace Classes
             AtualizarListaAlunos();
         }
 
-        private void CalcularMensalidade()
+        private void cbxModalidade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cbxModalidade.SelectedItem)
+            if (cbxModalidade.SelectedItem != null)
             {
-                case "Musculação":
-                    txtMensalidade.Text = "R$: 100,00";
-                    break;
-                case "Preparação Fisica":
-                    txtMensalidade.Text = "R$: 125,00";
-                    break;
-                case "Dança":
-                    txtMensalidade.Text = "R$: 90,00";
-                    break;
-                case "Crossfit":
-                    txtMensalidade.Text = "R$: 200,00";
-                    break;
+                btnSalvar.Enabled = true;
+                CalcularMensalidade();
             }
         }
 
+        private void lbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbxAlunos.SelectedIndex >= 0)
+            {
+                txtNome.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].Nome;
+                mskTelefone.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].Telefone;
+                mskCPF.Text = academia.ListaAlunos[lbxAlunos.SelectedIndex].CPF;
+                cbxTurno.SelectedItem = academia.ListaAlunos[lbxAlunos.SelectedIndex].Turno;
+                cbxModalidade.SelectedItem = academia.ListaAlunos[lbxAlunos.SelectedIndex].Modalidade;
+                btnSalvar.Enabled = true;
+                btnDeletar.Enabled = true;
+                novo = false;
+            }
+        }
+        
         private void AtualizarListaAlunos()
         {
             lbxAlunos.Items.Clear();
@@ -170,6 +150,25 @@ namespace Classes
             cbxModalidade.SelectedItem = null;
         }
 
+        private void CalcularMensalidade()
+        {
+            switch (cbxModalidade.SelectedItem)
+            {
+                case "Musculação":
+                    txtMensalidade.Text = "R$: 100,00";
+                    break;
+                case "Preparação Fisica":
+                    txtMensalidade.Text = "R$: 125,00";
+                    break;
+                case "Dança":
+                    txtMensalidade.Text = "R$: 90,00";
+                    break;
+                case "Crossfit":
+                    txtMensalidade.Text = "R$: 200,00";
+                    break;
+            }
+        }
+        
         private bool VerificarDados()
         {
             verificacao = true;
@@ -197,3 +196,7 @@ namespace Classes
         }
     }
 }
+
+
+
+
