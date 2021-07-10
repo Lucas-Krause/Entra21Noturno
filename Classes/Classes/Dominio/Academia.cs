@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Classes.Dominio
 {
-    class Academia
+    class Academia : Formulario
     {
         public List<Aluno> ListaAlunos { get; set; }
 
@@ -35,6 +41,7 @@ namespace Classes.Dominio
 
         public string DadoAluno(int indice, string dado)
         {
+            
             switch (dado)
             {
                 case "Nome":

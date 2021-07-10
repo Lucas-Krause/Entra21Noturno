@@ -19,15 +19,15 @@ namespace Classes
         bool verificacao;
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
-        private void Formulario_Load(object sender, EventArgs e)
-        {
-            btnAdicionar_Click(sender, e);
-        }
-
         public Formulario()
         {
             InitializeComponent();
             academia = new Academia();
+        }
+
+        private void Formulario_Load(object sender, EventArgs e)
+        {
+            btnAdicionar_Click(sender, e);
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
