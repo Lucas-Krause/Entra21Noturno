@@ -109,6 +109,7 @@ namespace Classes
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(227, 23);
             this.txtNome.TabIndex = 8;
+           
             // 
             // cbxProfessor
             // 

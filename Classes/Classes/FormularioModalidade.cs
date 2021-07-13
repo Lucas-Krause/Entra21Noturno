@@ -176,8 +176,6 @@ namespace Classes
         private void FormularioModalidade_Leave(object sender, EventArgs e)
         {
             LimparDados();
-        }
-
-       
+        } 
     }
 }
