@@ -4,15 +4,13 @@ using System.Text;
 
 namespace Classes.Dominio
 {
-    class Aluno : Pessoa
+    public class Aluno : Pessoa
     {
         public string Turno { get; set; }
-        public string Modalidade { get; set; }
+        public Modalidade Modalidade { get; set; }
         public string Pagou { get; set; }
 
-        
-
-        public Aluno(string nome, string telefone, string cpf, string turno, string modalidade)
+        public Aluno(string nome, string telefone, string cpf, string turno, Modalidade modalidade)
         {
             Nome = nome;
             Telefone = telefone;

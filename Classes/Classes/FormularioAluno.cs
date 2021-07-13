@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Classes
 {
-    public partial class Formulario : Form
+    public partial class FormularioAluno : Form
     {
         Academia academia;
         bool novo;
@@ -19,18 +19,13 @@ namespace Classes
         bool verificacao;
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
-        public Formulario()
+        public FormularioAluno(Academia academiaPai)
         {
             InitializeComponent();
-            academia = new Academia();
+            academia = academiaPai;
         }
 
-        private void Formulario_Load(object sender, EventArgs e)
-        {
-            btnAdicionar_Click(sender, e);
-        }
-
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnNovo_Click(object sender, EventArgs e)
         {
 
             LimparDados();
@@ -41,7 +36,7 @@ namespace Classes
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
-        {
+        {   
             if (VerificarDados())
             {
                 if (novo)
@@ -50,26 +45,26 @@ namespace Classes
                         txtNome.Text,
                         mskTelefone.Text,
                         mskCPF.Text,
-                        cbxTurno.SelectedItem.ToString(),
-                        cbxModalidade.SelectedItem.ToString());
+                        (Modalidade)cbxModalidade.SelectedItem);
                     if (pagar)
                     {
                         academia.ListaAlunos.Last().Pagou = "Sim.";
                     }
+                    pagar = false;
+                    btnNovo_Click(sender, e);
                 }
                 else
                 {
                     if (lbxAlunos.SelectedIndex >= 0)
                     {
-                        academia.AtualizarAluno(
+                        academia.EditarAluno(
                             lbxAlunos.SelectedIndex,
                             txtNome.Text,
                             mskTelefone.Text,
                             mskCPF.Text,
-                            cbxTurno.SelectedItem.ToString(),
-                            cbxModalidade.SelectedItem.ToString());
+                            (Modalidade)cbxModalidade.SelectedItem);
                     }
-
+                    btnNovo_Click(sender, e);
                 }
             }
             else
@@ -77,8 +72,6 @@ namespace Classes
                 MessageBox.Show(mensagemDeErro);
                 mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
             }
-            pagar = false;
-            novo = false;
             AtualizarListaAlunos();
         }
 
@@ -88,10 +81,8 @@ namespace Classes
             {
                 academia.DeletarAluno(lbxAlunos.SelectedIndex);
             }
-            LimparDados();
             AtualizarListaAlunos();
-            btnDeletar.Enabled = false;
-            btnSalvar.Enabled = false;
+            btnNovo_Click(sender, e);
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
@@ -107,31 +98,6 @@ namespace Classes
             AtualizarListaAlunos();
         }
 
-        private void cbxModalidade_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbxModalidade.SelectedItem != null)
-            {
-                btnSalvar.Enabled = true;
-                CalcularMensalidade();
-            }
-        }
-
-        private void lbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int indice = lbxAlunos.SelectedIndex;
-            if (indice >= 0)
-            {
-                txtNome.Text = academia.DadoAluno(indice, "Nome");
-                mskTelefone.Text = academia.DadoAluno(indice, "Telefone");
-                mskCPF.Text = academia.DadoAluno(indice, "CPF");
-                cbxTurno.SelectedItem = academia.DadoAluno(indice, "Turno");
-                cbxModalidade.SelectedItem = academia.DadoAluno(indice, "Modalidade");
-                btnSalvar.Enabled = true;
-                btnDeletar.Enabled = true;
-                novo = false;
-            }
-        }
-        
         private void AtualizarListaAlunos()
         {
             lbxAlunos.Items.Clear();
@@ -147,29 +113,11 @@ namespace Classes
             mskTelefone.Clear();
             mskCPF.Clear();
             txtMensalidade.Clear();
-            cbxTurno.SelectedItem = null;
+            txtTurno.Clear();
+            txtProfessor.Clear();
             cbxModalidade.SelectedItem = null;
         }
 
-        private void CalcularMensalidade()
-        {
-            switch (cbxModalidade.SelectedItem)
-            {
-                case "Musculação":
-                    txtMensalidade.Text = "R$: 100,00";
-                    break;
-                case "Preparação Fisica":
-                    txtMensalidade.Text = "R$: 125,00";
-                    break;
-                case "Dança":
-                    txtMensalidade.Text = "R$: 90,00";
-                    break;
-                case "Crossfit":
-                    txtMensalidade.Text = "R$: 200,00";
-                    break;
-            }
-        }
-        
         private bool VerificarDados()
         {
             verificacao = true;
@@ -188,12 +136,67 @@ namespace Classes
                 verificacao = false;
                 mensagemDeErro += "\n--> CPF.";
             }
-            if (cbxTurno.SelectedItem == null)
-            {
-                verificacao = false;
-                mensagemDeErro += "\n--> Turno.";
-            }
             return verificacao;
+        }
+
+        private void lbxAlunos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = lbxAlunos.SelectedIndex;
+            if (indice >= 0)
+            {
+                txtNome.Text = academia.ListaAlunos[indice].Nome;
+                mskTelefone.Text = academia.ListaAlunos[indice].Telefone;
+                mskCPF.Text = academia.ListaAlunos[indice].CPF;
+                txtTurno.Text = academia.ListaAlunos[indice].Modalidade.Professor.Turno;
+                cbxModalidade.SelectedItem = academia.ListaAlunos[indice].Modalidade;
+                btnSalvar.Enabled = true;
+                btnDeletar.Enabled = true;
+                novo = false;
+            }
+        }
+
+        private void cbxModalidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxModalidade.SelectedItem != null)
+            {
+                btnSalvar.Enabled = true;
+                txtTurno.Text = academia.ListaModalidades[cbxModalidade.SelectedIndex].Professor.Turno;
+                txtProfessor.Text = academia.ListaModalidades[cbxModalidade.SelectedIndex].Professor.Nome;
+                txtMensalidade.Text = academia.ListaModalidades[cbxModalidade.SelectedIndex].CalcularValor().ToString();
+            }
+        }
+
+        private void mskTelefone_Click(object sender, EventArgs e)
+        {
+            mskTelefone.Focus();
+        }
+
+        private void mskCPF_Click(object sender, EventArgs e)
+        {
+            mskCPF.Focus();
+        }
+
+        private void FormularioAluno_Enter(object sender, EventArgs e)
+        {
+            btnNovo_Click(sender, e);
+            cbxModalidade.Items.Clear();
+            foreach (var modalidade in academia.ListaModalidades)
+            {
+                cbxModalidade.Items.Add(modalidade);
+            }
+        }
+
+        private void FormularioAluno_Leave(object sender, EventArgs e)
+        {
+            LimparDados();
+        }
+
+        private void txtNome_Leave(object sender, EventArgs e)
+        {
+            if (!btnSalvar.Focus() && !String.IsNullOrEmpty(txtNome.Text))
+            {
+                mskTelefone.Focus();
+            }
         }
     }
 }

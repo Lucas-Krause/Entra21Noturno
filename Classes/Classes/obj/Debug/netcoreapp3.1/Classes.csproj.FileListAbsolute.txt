@@ -20,7 +20,6 @@ C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\bin\Debug\netcoreapp3
 C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\bin\Debug\netcoreapp3.1\Classes.dll
 C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\bin\Debug\netcoreapp3.1\Classes.pdb
 C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.csproj.AssemblyReference.cache
-C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.Formulario.resources
 C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.csproj.GenerateResource.cache
 C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.AssemblyInfoInputs.cache
 C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.AssemblyInfo.cs
@@ -43,3 +42,7 @@ C:\Users\Entra21\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreap
 C:\Users\Entra21\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.dll
 C:\Users\Entra21\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.pdb
 C:\Users\Entra21\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.genruntimeconfig.cache
+C:\Users\LUCAS\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.FormularioAluno.resources
+C:\Users\LUCAS\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.Menu.resources
+C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.FormularioProfessor.resources
+C:\Users\LUCAS\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.FormularioModalidade.resources
