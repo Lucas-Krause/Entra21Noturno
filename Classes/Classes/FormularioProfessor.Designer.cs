@@ -210,7 +210,6 @@ namespace Classes
             this.ShowIcon = false;
             this.Text = "Formulario Professor";
             this.Load += new System.EventHandler(this.FormularioProfessor_Load);
-            this.Enter += new System.EventHandler(this.FormularioProfessor_Enter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

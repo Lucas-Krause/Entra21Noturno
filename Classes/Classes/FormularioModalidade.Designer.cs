@@ -70,7 +70,7 @@ namespace Classes
             this.mskPrecoHora.Name = "mskPrecoHora";
             this.mskPrecoHora.Size = new System.Drawing.Size(73, 23);
             this.mskPrecoHora.TabIndex = 3;
-            this.mskPrecoHora.Click += new System.EventHandler(this.mskCPF_Click);
+            this.mskPrecoHora.Click += new System.EventHandler(this.mskPrecoHora_Click);
             this.mskPrecoHora.TextChanged += new System.EventHandler(this.mskPrecoHora_TextChanged);
             // 
             // label4

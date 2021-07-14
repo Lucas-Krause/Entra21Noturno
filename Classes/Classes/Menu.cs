@@ -47,6 +47,7 @@ namespace Classes
         {   
             pnlFormulario.Controls.Clear();
             pnlFormulario.Controls.Add(formProfessor);
+            formProfessor.WindowState = FormWindowState.Maximized;
             formProfessor.Show();
             formProfessor.Focus();
             btnProfessor.Enabled = false;
@@ -59,6 +60,7 @@ namespace Classes
             {
                 pnlFormulario.Controls.Clear();
                 pnlFormulario.Controls.Add(formModalidade);
+                formModalidade.WindowState = FormWindowState.Maximized;
                 formModalidade.Show();
                 formModalidade.Focus();
                 btnProfessor.Enabled = true;
@@ -78,6 +80,7 @@ namespace Classes
             {
                 pnlFormulario.Controls.Clear();
                 pnlFormulario.Controls.Add(formAluno);
+                formAluno.WindowState = FormWindowState.Maximized;
                 formAluno.Show();
                 formAluno.Focus();
                 btnProfessor.Enabled = true;

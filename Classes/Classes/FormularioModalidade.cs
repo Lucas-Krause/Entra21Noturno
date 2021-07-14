@@ -14,12 +14,9 @@ namespace Classes
         Academia _academia;
         bool novo;
         bool verificacao;
+        string nome = "";
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
-        private void mskCPF_Click(object sender, EventArgs e)
-        {
-            mskPrecoHora.Focus();
-        }
 
         public FormularioModalidade(Academia academiaPai)
         {
@@ -81,12 +78,32 @@ namespace Classes
         
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (lbxModalidades.SelectedIndex >= 0)
+            int indice = lbxModalidades.SelectedIndex;
+            bool verificarDelete = true;
+            if (indice >= 0)
             {
-                _academia.DeletarModalidade(lbxModalidades.SelectedIndex);
+                foreach (var aluno in _academia.ListaAlunos)
+                {
+                    if (aluno.Modalidade.Nome == _academia.ListaModalidades[indice].Nome)
+                    {
+                        nome += $"\n--> {aluno.Nome}";
+                        verificarDelete = false;
+                    }
+                }
+                if (verificarDelete)
+                {
+                    _academia.DeletarModalidade(indice);
+                    btnNovo_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Você não pode deletar uma modalidade já cadastrado em um aluno\n" +
+                        $"por favor altere a modalidade do(s) seguinte(s) aluno(s) {nome}");
+                    nome = "";
+                    btnNovo_Click(sender, e);
+                }
             }
             AtualizarListaModalidades();
-            btnNovo_Click(sender, e);
         }
         
         private void AtualizarListaModalidades()
@@ -169,6 +186,10 @@ namespace Classes
         {
             LimparDados();
         }
-
+        
+        private void mskPrecoHora_Click(object sender, EventArgs e)
+        {
+            mskPrecoHora.Focus();
+        }
     }
 }

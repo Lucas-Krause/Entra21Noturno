@@ -14,6 +14,7 @@ namespace Classes
         Academia _academia;
         bool novo;
         bool verificacao;
+        string nome = "";
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
         public FormularioProfessor(Academia academiaPai)
@@ -21,7 +22,7 @@ namespace Classes
             InitializeComponent();
             _academia = academiaPai;
         }
-        
+
         private void FormularioProfessor_Load(object sender, EventArgs e)
         {
             btnNovo_Click(sender, e);
@@ -77,12 +78,32 @@ namespace Classes
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (lbxProfessores.SelectedIndex >= 0)
+            int indice = lbxProfessores.SelectedIndex;
+            bool verificarDelete = true;
+            if (indice >= 0)
             {
-                _academia.DeletarProfessor(lbxProfessores.SelectedIndex);
+                foreach (var modalidade in _academia.ListaModalidades)
+                {
+                    if (modalidade.Professor.CPF == _academia.ListaProfessores[indice].CPF)
+                    {
+                        nome += $"\n--> {modalidade.Nome}";
+                        verificarDelete = false;
+                    }
+                }
+                if (verificarDelete)
+                {
+                    _academia.DeletarProfessor(indice);
+                    btnNovo_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Você não pode deletar um professor já cadastrado em uma modalidade\n" +
+                        $"por favor altere o professor da(s) seguinte(s) modalidade(s) {nome}");
+                    nome = "";
+                    btnNovo_Click(sender, e);
+                }
             }
-            AtualizarListaProfessores();
-            btnNovo_Click(sender, e);
+            AtualizarListaProfessores();    
         }
 
         private void lbxProfessores_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,6 +122,14 @@ namespace Classes
             }
         }
         
+        private void cbxTurno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxTurno.SelectedItem != null)
+            {
+                btnSalvar.Enabled = true;
+            }
+        }
+
         private void AtualizarListaProfessores()
         {
             lbxProfessores.Items.Clear();
@@ -109,7 +138,7 @@ namespace Classes
                 lbxProfessores.Items.Add(professor);
             }
         }
-        
+
         private bool VerificarDados()
         {
             verificacao = true;
@@ -150,14 +179,6 @@ namespace Classes
             cbxTurno.SelectedItem = null;
         }
 
-        private void cbxTurno_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbxTurno.SelectedItem != null)
-            {
-                btnSalvar.Enabled = true;
-            }
-        }
-        
         private void mskTelefone_Click(object sender, EventArgs e)
         {
             mskTelefone.Focus();
@@ -171,11 +192,6 @@ namespace Classes
         private void mskCPF_Click(object sender, EventArgs e)
         {
             mskCPF.Focus();
-        }
-
-        private void FormularioProfessor_Enter(object sender, EventArgs e)
-        {
-            btnNovo_Click(sender, e);
         }
     }
 }
