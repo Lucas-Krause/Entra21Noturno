@@ -12,21 +12,20 @@ namespace Classes
     public partial class FormularioProfessor : Form
     {
         Academia _academia;
-        FormularioModalidade _formularioModalidade;
         bool novo;
         bool verificacao;
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
-        public FormularioProfessor(Academia academiaPai, FormularioModalidade formularioModalidade)
+        public FormularioProfessor(Academia academiaPai)
         {
             InitializeComponent();
             _academia = academiaPai;
-            _formularioModalidade = formularioModalidade;
         }
         
         private void FormularioProfessor_Load(object sender, EventArgs e)
         {
             btnNovo_Click(sender, e);
+            AtualizarListaProfessores();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -36,14 +35,6 @@ namespace Classes
             txtNome.Focus();
             btnDeletar.Enabled = false;
             btnSalvar.Enabled = false;
-            if (_academia.ListaProfessores.Count > 0)
-            {
-                _formularioModalidade.Enabled = true;
-            }
-            else
-            {
-                _formularioModalidade.Enabled = false;
-            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -59,10 +50,6 @@ namespace Classes
                         cbxTurno.SelectedItem.ToString(),
                         double.Parse(mskSalarioHora.Text.Substring(4)));
                     btnNovo_Click(sender, e);
-                    if (_formularioModalidade.Enabled)
-                    {
-                        _formularioModalidade.Focus();
-                    }
                     novo = false;
                 }
                 else
@@ -170,7 +157,7 @@ namespace Classes
                 btnSalvar.Enabled = true;
             }
         }
-
+        
         private void mskTelefone_Click(object sender, EventArgs e)
         {
             mskTelefone.Focus();
@@ -184,6 +171,11 @@ namespace Classes
         private void mskCPF_Click(object sender, EventArgs e)
         {
             mskCPF.Focus();
+        }
+
+        private void FormularioProfessor_Enter(object sender, EventArgs e)
+        {
+            btnNovo_Click(sender, e);
         }
     }
 }

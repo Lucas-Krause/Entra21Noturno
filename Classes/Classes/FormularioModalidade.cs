@@ -12,7 +12,6 @@ namespace Classes
     public partial class FormularioModalidade : Form
     {
         Academia _academia;
-        FormularioAluno _formAluno;
         bool novo;
         bool verificacao;
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
@@ -22,11 +21,16 @@ namespace Classes
             mskPrecoHora.Focus();
         }
 
-        public FormularioModalidade(Academia academiaPai, FormularioAluno formularioAluno)
+        public FormularioModalidade(Academia academiaPai)
         {
             InitializeComponent();
             _academia = academiaPai;
-            _formAluno = formularioAluno;
+        }
+
+        private void FormularioModalidade_Load(object sender, EventArgs e)
+        {
+            btnNovo_Click(sender, e);
+            AtualizarListaModalidades();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -36,14 +40,6 @@ namespace Classes
             txtNome.Focus();
             btnDeletar.Enabled = false;
             btnSalvar.Enabled = false;
-            if (_academia.ListaModalidades.Count > 0)
-            {
-                _formAluno.Enabled = true;
-            }
-            else
-            {
-                _formAluno.Enabled = false;
-            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -59,10 +55,6 @@ namespace Classes
                         (Professor)cbxProfessor.SelectedItem);
                     AtualizarListaModalidades();
                     btnNovo_Click(sender, e);
-                    if (_formAluno.Enabled)
-                    {
-                        _formAluno.Focus();
-                    }
                     novo = false;
                 }
                 else
@@ -176,6 +168,7 @@ namespace Classes
         private void FormularioModalidade_Leave(object sender, EventArgs e)
         {
             LimparDados();
-        } 
+        }
+
     }
 }

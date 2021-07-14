@@ -51,7 +51,7 @@ namespace Classes
             this.lbxProfessores.ItemHeight = 15;
             this.lbxProfessores.Location = new System.Drawing.Point(246, 32);
             this.lbxProfessores.Name = "lbxProfessores";
-            this.lbxProfessores.Size = new System.Drawing.Size(293, 169);
+            this.lbxProfessores.Size = new System.Drawing.Size(265, 169);
             this.lbxProfessores.TabIndex = 19;
             this.lbxProfessores.SelectedIndexChanged += new System.EventHandler(this.lbxProfessores_SelectedIndexChanged);
             // 
@@ -210,6 +210,7 @@ namespace Classes
             this.ShowIcon = false;
             this.Text = "Formulario Professor";
             this.Load += new System.EventHandler(this.FormularioProfessor_Load);
+            this.Enter += new System.EventHandler(this.FormularioProfessor_Enter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

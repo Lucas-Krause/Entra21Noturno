@@ -64,8 +64,7 @@ namespace Classes
             this.txtNome.Location = new System.Drawing.Point(12, 32);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(227, 23);
-            this.txtNome.TabIndex = 8;
-            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
+            this.txtNome.TabIndex = 0;
             // 
             // label1
             // 
@@ -147,7 +146,7 @@ namespace Classes
             this.lbxAlunos.ItemHeight = 15;
             this.lbxAlunos.Location = new System.Drawing.Point(246, 32);
             this.lbxAlunos.Name = "lbxAlunos";
-            this.lbxAlunos.Size = new System.Drawing.Size(293, 169);
+            this.lbxAlunos.Size = new System.Drawing.Size(265, 169);
             this.lbxAlunos.TabIndex = 15;
             this.lbxAlunos.SelectedIndexChanged += new System.EventHandler(this.lbxAlunos_SelectedIndexChanged);
             // 
@@ -261,7 +260,6 @@ namespace Classes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.mskTelefone);
-            this.Enabled = false;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

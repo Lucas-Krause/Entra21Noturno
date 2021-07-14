@@ -46,3 +46,4 @@ C:\Users\LUCAS\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3
 C:\Users\LUCAS\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.Menu.resources
 C:\Users\LUCAS\Source\Repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.FormularioProfessor.resources
 C:\Users\LUCAS\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.FormularioModalidade.resources
+C:\Users\LUCAS\source\repos\Entra21Noturno\Classes\Classes\obj\Debug\netcoreapp3.1\Classes.Properties.Resources.resources

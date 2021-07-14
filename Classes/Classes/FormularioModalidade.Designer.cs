@@ -59,7 +59,7 @@ namespace Classes
             this.lbxModalidades.ItemHeight = 15;
             this.lbxModalidades.Location = new System.Drawing.Point(246, 32);
             this.lbxModalidades.Name = "lbxModalidades";
-            this.lbxModalidades.Size = new System.Drawing.Size(293, 169);
+            this.lbxModalidades.Size = new System.Drawing.Size(265, 169);
             this.lbxModalidades.TabIndex = 7;
             this.lbxModalidades.SelectedIndexChanged += new System.EventHandler(this.lbxModalidades_SelectedIndexChanged);
             // 
@@ -109,7 +109,6 @@ namespace Classes
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(227, 23);
             this.txtNome.TabIndex = 8;
-           
             // 
             // cbxProfessor
             // 
@@ -185,12 +184,12 @@ namespace Classes
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.cbxProfessor);
-            this.Enabled = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioModalidade";
             this.ShowIcon = false;
             this.Text = "Formulario Modalidade";
+            this.Load += new System.EventHandler(this.FormularioModalidade_Load);
             this.Enter += new System.EventHandler(this.FormularioModalidade_Enter);
             this.Leave += new System.EventHandler(this.FormularioModalidade_Leave);
             this.ResumeLayout(false);

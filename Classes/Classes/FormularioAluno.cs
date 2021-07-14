@@ -27,7 +27,6 @@ namespace Classes
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-
             LimparDados();
             novo = true;
             txtNome.Focus();
@@ -189,14 +188,6 @@ namespace Classes
         private void FormularioAluno_Leave(object sender, EventArgs e)
         {
             LimparDados();
-        }
-
-        private void txtNome_Leave(object sender, EventArgs e)
-        {
-            if (!btnSalvar.Focus() && !String.IsNullOrEmpty(txtNome.Text))
-            {
-                mskTelefone.Focus();
-            }
         }
     }
 }
