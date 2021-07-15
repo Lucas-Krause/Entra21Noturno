@@ -12,11 +12,25 @@ namespace Classes.Dominio
 {
     public class Academia
     {
+        private static Academia instancia;
+
+        public static Academia Instancia
+        {
+            get
+            {
+                if (instancia == null)
+                {
+                    instancia = new Academia();
+                }
+                return instancia;
+            }
+        }
+
         public List<Aluno> ListaAlunos { get; set; }
         public List<Professor> ListaProfessores { get; set; }
         public List<Modalidade> ListaModalidades { get; set; }
 
-        public Academia()
+        private Academia()
         {
             ListaProfessores = new List<Professor>();
             ListaModalidades = new List<Modalidade>();

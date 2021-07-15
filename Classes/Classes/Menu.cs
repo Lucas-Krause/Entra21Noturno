@@ -19,13 +19,13 @@ namespace Classes
         public Menu()
         {
             InitializeComponent();
-            _academia = new Academia();
+            _academia = Academia.Instancia;
             
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            formProfessor = new FormularioProfessor(_academia);
+            formProfessor = new FormularioProfessor();
             formProfessor.TopLevel = false;
             pnlFormulario.Controls.Add(formProfessor);
             formProfessor.WindowState = FormWindowState.Maximized;
@@ -34,11 +34,11 @@ namespace Classes
             btnProfessor.Enabled = false;
             btnAluno.Enabled = false;
 
-            formModalidade = new FormularioModalidade(_academia);
+            formModalidade = new FormularioModalidade();
             formModalidade.TopLevel = false;
             formModalidade.WindowState = FormWindowState.Maximized;
 
-            formAluno = new FormularioAluno(_academia);
+            formAluno = new FormularioAluno();
             formAluno.TopLevel = false;
             formAluno.WindowState = FormWindowState.Maximized;
         }

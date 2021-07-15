@@ -18,10 +18,10 @@ namespace Classes
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
 
-        public FormularioModalidade(Academia academiaPai)
+        public FormularioModalidade()
         {
             InitializeComponent();
-            _academia = academiaPai;
+            _academia = Academia.Instancia;
         }
 
         private void FormularioModalidade_Load(object sender, EventArgs e)

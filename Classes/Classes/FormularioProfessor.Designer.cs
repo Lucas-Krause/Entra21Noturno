@@ -189,7 +189,7 @@ namespace Classes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 247);
+            this.ClientSize = new System.Drawing.Size(566, 291);
             this.Controls.Add(this.mskSalarioHora);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnDeletar);

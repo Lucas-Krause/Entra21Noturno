@@ -19,10 +19,10 @@ namespace Classes
         bool verificacao;
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
-        public FormularioAluno(Academia academiaPai)
+        public FormularioAluno()
         {
             InitializeComponent();
-            academia = academiaPai;
+            academia = Academia.Instancia;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

@@ -17,10 +17,10 @@ namespace Classes
         string nome = "";
         string mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
 
-        public FormularioProfessor(Academia academiaPai)
+        public FormularioProfessor()
         {
             InitializeComponent();
-            _academia = academiaPai;
+            _academia = Academia.Instancia;
         }
 
         private void FormularioProfessor_Load(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace Classes
             foreach (var professor in _academia.ListaProfessores)
             {
                 lbxProfessores.Items.Add(professor);
-            }
+            }    
         }
 
         private bool VerificarDados()
