@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj": {}
+    "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj": {
+    "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj",
+        "projectUniqueName": "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj",
         "projectName": "Classes",
-        "projectPath": "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj",
+        "projectPath": "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Classes\\Classes\\Classes.csproj",
         "packagesPath": "C:\\Users\\LUCAS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LUCAS\\source\\repos\\Entra21Noturno\\Classes\\Classes\\obj\\",
+        "outputPath": "C:\\Users\\LUCAS\\Source\\Repos\\Entra21Noturno\\Classes\\Classes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LUCAS\\AppData\\Roaming\\NuGet\\NuGet.Config",

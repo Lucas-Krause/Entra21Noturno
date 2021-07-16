@@ -20,7 +20,6 @@ namespace Classes
         {
             InitializeComponent();
             _academia = Academia.Instancia;
-            
         }
 
         private void Menu_Load(object sender, EventArgs e)

@@ -50,7 +50,6 @@ namespace Classes
                         Convert.ToInt32(cbxVezesSemana.SelectedItem),
                         double.Parse(mskPrecoHora.Text.Substring(4)),
                         (Professor)cbxProfessor.SelectedItem);
-                    AtualizarListaModalidades();
                     btnNovo_Click(sender, e);
                     novo = false;
                 }
@@ -65,7 +64,6 @@ namespace Classes
                             double.Parse(mskPrecoHora.Text.Substring(4)),
                             (Professor)cbxProfessor.SelectedItem);
                     }
-                    AtualizarListaModalidades();
                     btnNovo_Click(sender, e);
                 }
             }
@@ -74,8 +72,9 @@ namespace Classes
                 MessageBox.Show(mensagemDeErro);
                 mensagemDeErro = "Os dados a seguir não foram preenchidos\npor favor os preencha";
             }
+            AtualizarListaModalidades();
         }
-        
+
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             int indice = lbxModalidades.SelectedIndex;
@@ -105,7 +104,7 @@ namespace Classes
             }
             AtualizarListaModalidades();
         }
-        
+
         private void AtualizarListaModalidades()
         {
             lbxModalidades.Items.Clear();
@@ -114,7 +113,7 @@ namespace Classes
                 lbxModalidades.Items.Add(modalidade);
             }
         }
-        
+
         private void LimparDados()
         {
             txtNome.Clear();
@@ -186,7 +185,7 @@ namespace Classes
         {
             LimparDados();
         }
-        
+
         private void mskPrecoHora_Click(object sender, EventArgs e)
         {
             mskPrecoHora.Focus();

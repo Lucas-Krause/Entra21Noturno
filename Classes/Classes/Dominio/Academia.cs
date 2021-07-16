@@ -13,7 +13,6 @@ namespace Classes.Dominio
     public class Academia
     {
         private static Academia instancia;
-
         public static Academia Instancia
         {
             get

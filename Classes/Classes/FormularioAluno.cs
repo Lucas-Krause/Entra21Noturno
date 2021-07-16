@@ -165,16 +165,6 @@ namespace Classes
             }
         }
 
-        private void mskTelefone_Click(object sender, EventArgs e)
-        {
-            mskTelefone.Focus();
-        }
-
-        private void mskCPF_Click(object sender, EventArgs e)
-        {
-            mskCPF.Focus();
-        }
-
         private void FormularioAluno_Enter(object sender, EventArgs e)
         {
             btnNovo_Click(sender, e);
@@ -188,6 +178,16 @@ namespace Classes
         private void FormularioAluno_Leave(object sender, EventArgs e)
         {
             LimparDados();
+        }
+        
+        private void mskTelefone_Click(object sender, EventArgs e)
+        {
+            mskTelefone.Focus();
+        }
+
+        private void mskCPF_Click(object sender, EventArgs e)
+        {
+            mskCPF.Focus();
         }
     }
 }
