@@ -13,7 +13,7 @@ namespace Classes
 {
     public partial class FormularioAluno : Form
     {
-        Academia academia;
+        readonly Academia academia;
         bool novo;
         bool pagar = false;
         bool verificacao;
@@ -146,7 +146,6 @@ namespace Classes
                 txtNome.Text = academia.ListaAlunos[indice].Nome;
                 mskTelefone.Text = academia.ListaAlunos[indice].Telefone;
                 mskCPF.Text = academia.ListaAlunos[indice].CPF;
-                txtTurno.Text = academia.ListaAlunos[indice].Modalidade.Professor.Turno;
                 cbxModalidade.SelectedItem = academia.ListaAlunos[indice].Modalidade;
                 btnSalvar.Enabled = true;
                 btnDeletar.Enabled = true;
@@ -189,6 +188,7 @@ namespace Classes
         {
             mskCPF.Focus();
         }
+
     }
 }
 

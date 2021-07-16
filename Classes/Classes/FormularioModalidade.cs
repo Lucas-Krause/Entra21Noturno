@@ -11,7 +11,7 @@ namespace Classes
 {
     public partial class FormularioModalidade : Form
     {
-        Academia _academia;
+        readonly Academia _academia;
         bool novo;
         bool verificacao;
         string nome = "";

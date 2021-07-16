@@ -14,7 +14,7 @@ namespace Classes
         FormularioProfessor formProfessor;
         FormularioModalidade formModalidade;
         FormularioAluno formAluno;
-        Academia _academia;
+        readonly Academia _academia;
 
         public Menu()
         {
@@ -34,12 +34,7 @@ namespace Classes
             btnAluno.Enabled = false;
 
             formModalidade = new FormularioModalidade();
-            formModalidade.TopLevel = false;
-            formModalidade.WindowState = FormWindowState.Maximized;
-
             formAluno = new FormularioAluno();
-            formAluno.TopLevel = false;
-            formAluno.WindowState = FormWindowState.Maximized;
         }
 
         private void btnProfessor_Click(object sender, EventArgs e)
@@ -58,6 +53,7 @@ namespace Classes
             if (_academia.ListaProfessores.Count > 0)
             {
                 pnlFormulario.Controls.Clear();
+                formModalidade.TopLevel = false;
                 pnlFormulario.Controls.Add(formModalidade);
                 formModalidade.WindowState = FormWindowState.Maximized;
                 formModalidade.Show();
@@ -78,6 +74,7 @@ namespace Classes
             if (_academia.ListaModalidades.Count > 0)
             {
                 pnlFormulario.Controls.Clear();
+                formAluno.TopLevel = false;
                 pnlFormulario.Controls.Add(formAluno);
                 formAluno.WindowState = FormWindowState.Maximized;
                 formAluno.Show();

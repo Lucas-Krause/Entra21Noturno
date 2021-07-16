@@ -94,6 +94,7 @@ namespace Classes
             this.Controls.Add(this.btnProfessor);
             this.Controls.Add(this.pnlFormulario);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Menu";

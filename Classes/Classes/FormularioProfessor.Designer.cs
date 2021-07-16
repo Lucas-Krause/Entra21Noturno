@@ -204,6 +204,7 @@ namespace Classes
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.cbxTurno);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioProfessor";
